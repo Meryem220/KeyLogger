@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+  Login Page For Keylogger
+{% endblock %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block body %} 
+  <h1>Login Page</h1>
+
+  <form action="POST">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" required><br>
+    <input type="submit" value="Submit">
+
+  </form>
+{% endblock %}
+
+{% block footer %} 
+
+{% endblock %}
