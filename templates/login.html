@@ -8,18 +8,35 @@
 
 {% endblock %}
 
-{% block body %} 
-  <h1>Login Page</h1>
+{% block content %} 
+  
+    <div class="content">
+      <h1>Login Page</h1>
 
-  <form action="POST">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">Password</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <input type="submit" value="Submit">
+      <form action="{{ url_for('login') }}" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
 
-  </form>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" required><br>
+        
+        <input type="submit" value="Submit">
+
+      </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div style="color:red;">
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+
+        </div>
+      {% endif %}
+    {% endwith %}
 {% endblock %}
+  
 
 {% block footer %} 
 

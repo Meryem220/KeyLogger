@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% block head %} 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %} - My Web Page</title>
 
-    <title>{% block title %}{% endblock %} - My Web Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
   
+  {% block head %} 
+    
   {% endblock %}
 </head>
+
 <body>
-  {% block body %} {% endblock %}
+
+  
+
+  <div class="container">
+    
+    {% block content %}
+  
+    {% endblock %}
+  
+  </div>
+
 
   {% block footer %} 
-  &copy; Copyright 2025 by <a href="http://domain.invalid/">you</a>
+  
   {% endblock %}
+  <br>
+<!-- &copy; Copyright 2025 by <a href="http://domain.invalid/">you</a> -->
 
 </body>
 </html>

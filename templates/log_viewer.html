@@ -1,0 +1,46 @@
+<h1>View Key Logs Page </h1>
+{% extends 'base.html' %}
+
+{% block title %} 
+  View Keylogger
+{% endblock %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block content %} 
+  
+  <h2>Captured Logs</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+  </table>
+  
+  <div class="content">
+    
+  </div>
+  
+  <form action="{{  url_for('logout') }}" method="get">
+    <Label>Logout</Label>
+    <button type="submit">Logout</button>
+  </form>
+  
+  <form action="{{ url_for('start_keylogger') }}" method="get">
+    <Label>Start KeyLogger</Label>
+    <button type="submit"> Start</button>
+  </form>
+  
+  <form action="{{ url_for('stop_keylogger') }}" method="get">
+    <Label>Stop KeyLogger</Label>
+    <button type="submit"> Stop</button>
+  </form>
+{% endblock %}
+
+
+{% block footer %} 
+
+{% endblock %} 
